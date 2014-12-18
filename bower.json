@@ -1,0 +1,12 @@
+{
+  "name": "continuosIntegration",
+  "version": "0.0.0",
+  "description": "Job finder app",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "~2.1.2",
+    "angular": "~1.3.7",
+    "bootstrap": "~3.3.1"
+  }
+}
