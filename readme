@@ -1,3 +1,15 @@
 npm install bower --dev
 bower init
 bower install angular --save
+
+git init
+vi .gitignore
+git add -A
+git commit -m "Initial"
+
+heroku login
+heroku create
+git push heroku master
+
+npm install --save-dev chai
+npm install --save mocha
