@@ -13,3 +13,8 @@ git push heroku master
 
 npm install --save-dev chai
 npm install --save mocha
+
+// use mongolabs to connect to db
+
+// chage bower components to save in the dir I want
+
