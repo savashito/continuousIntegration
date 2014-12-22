@@ -17,4 +17,7 @@ npm install --save mocha
 // use mongolabs to connect to db
 
 // chage bower components to save in the dir I want
-
+vi .bowerrc
+// testing
+npm install mocha -g
+mocha
