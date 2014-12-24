@@ -29,7 +29,7 @@ app.get('*',function(req,res){
  .then(function(){
 	console.log('Connected succesfully :)');
 	// create the entrys default
-	jobModel.seedJobs();
+	jobsData.seedJobs();
 });
 // var con = mongoose.connection;
 

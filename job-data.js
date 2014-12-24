@@ -33,9 +33,9 @@ exports.seedJobs = function(){
 	];
 		return findJobs()
 		.then(function(coll){
-			console.log('len '+coll.length)
+			// console.log('len '+coll.length)
 			if(coll.length === 0){
-				console.log('jobs have been creates :)');
+				// console.log('jobs have been creates :)');
 				// maps the array jobd
 				// returns the a promise
 				// the done is executed when the last job inside the array returns
