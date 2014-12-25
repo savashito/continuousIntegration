@@ -1,3 +1,4 @@
+```
 npm install bower --dev
 bower init
 bower install angular --save
@@ -13,11 +14,15 @@ git push heroku master
 
 npm install --save-dev chai
 npm install --save mocha
-
+```
 // use mongolabs to connect to db
 
 // chage bower components to save in the dir I want
+```
 vi .bowerrc
+```
 // testing
+```
 npm install mocha -g
 mocha
+```
