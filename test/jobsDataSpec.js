@@ -20,15 +20,19 @@ describe("get jobs",function(){
 	before (function(done){                                                                                     ('mongodb://localhost/jobfinder')
 		connectDB('mongodb://localhost/jobfinder')
 		.then(resetJobs()) // then receives a function or a promise
-		.then(jobsData.seedJobs())
-		.then(findJobs)
+		.then(jobsData.seedJobs)
+		.then(findJobs())
 		.then(function(jobs){
-			// console.log('jobs are '+jobs)
 			jobsList = jobs;
 			done();
 		});
 		
 	});
+	/*
+	it('Should be greater than 3',function(){
+		expect(4).to.be.at.least(3);
+	});
+	*/
 	it("Should never be empty since jobs are seeded",function(){
 		expect(jobsList.length).to.be.at.least(1);
 	});

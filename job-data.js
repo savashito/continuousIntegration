@@ -3,7 +3,8 @@ var Promise = require("bluebird");
 // defines how we get our data for the test
 var findJobs = function(query){
 	// wrap the query
-	console.log(query);
+	// console.log('finding jobs');
+	// console.log(query);
 	return Promise.cast(mongoose.model('Job').find(query).exec());
 };
 exports.findJobs = findJobs;
@@ -31,19 +32,25 @@ exports.seedJobs = function(){
 		{tittle:'Master Jedi',description:'you will kill the sith lords'},
 		{tittle:'Sith lord',description:'You will love the Jedi'}
 	];
-		return findJobs()
+		var a= findJobs()
 		.then(function(coll){
 			// console.log('len '+coll.length)
 			if(coll.length === 0){
-				// console.log('jobs have been creates :)');
+				// console.log('jobs have been creates :)\n');
 				// maps the array jobd
 				// returns the a promise
 				// the done is executed when the last job inside the array returns
+				
 				return Promise.map(jobs,function(job){
 					return createJob(job);
-				})
+				});
+			}else{
+				// console.log('jobs found '+coll.length);
+				// console.log(coll);
 			}
-		})
+		});
+		// console.log('MIauuu');
+		return a;
 }
 
 exports.resetJobs = function (){
@@ -53,8 +60,9 @@ exports.resetJobs = function (){
 		//.then(
 			//function(){
 				if(mongoose.connection.collections['jobs']){
-					res();
-					// mongoose.connection.collections['jobs'].drop(res,rej);
+					// res();
+					// console.log('Jobs have been deleted')
+					mongoose.connection.collections['jobs'].drop(res,rej);
 					// console.log('jobs have been reset :)');
 					// res();
 				}
